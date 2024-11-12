@@ -1,5 +1,5 @@
 #![no_std]
-use soroban_sdk::{contracttype, contract, contractimpl, symbol_short, panic_with_error, contracterror, Env, Symbol};
+use soroban_sdk::{contracttype, Address, contract, contractimpl, symbol_short, panic_with_error, contracterror, Env, Symbol};
 
 #[contracttype]
 #[derive(Clone, Copy, Debug, Eq, PartialEq)]
@@ -31,9 +31,14 @@ impl IncrementContract {
         env.storage().instance().get(&STATE).unwrap_or(State { count: 0, last_incr: 0 })
     }
 
-    pub fn increment(env: Env) -> u32 {
+    
+    pub fn increment(env: Env, user: Address) -> u32 {
 
+        
+        user.require_auth();
+        
        let mut state = Self::get_state(env.clone()); 
+       
 
        state.count += 1;
        state.last_incr = state.count;

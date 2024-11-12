@@ -10,8 +10,8 @@ use soroban_sdk::{testutils::Events, vec, Env, IntoVal};
 #[test]
 fn test() {
     let env = Env::default();
-    let contract_id = env.register_contract(None, CustomDataContract);
-    let client = CustomDataContractClient::new(&env, &contract_id);
+    let contract_id = env.register_contract(None, IncrementContract);
+    let client = IncrementContractClient::new(&env, &contract_id);
 
    // INCREMENT
     assert_eq!(client.increment(), 1);

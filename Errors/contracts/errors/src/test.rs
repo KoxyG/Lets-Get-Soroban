@@ -2,23 +2,24 @@
 use super::*;
 use soroban_sdk::{testutils::Events, vec, Env, IntoVal};
 
+
 #[test]
 fn test_normal_operation() {
     let env = Env::default();
     let contract_id = env.register_contract(None, IncrementContract);
     let client = IncrementContractClient::new(&env, &contract_id);
 
-    // INCREMENT
-    assert_eq!(client.increment(), 1, "First increment should return 1");
-    assert_eq!(client.increment(), 2, "Second increment should return 2");
-    assert_eq!(client.increment(), 3, "Third increment should return 3");
-    assert_eq!(client.increment(), 4, "Fourth increment should return 4");
+     // INCREMENT
+     assert_eq!(client.increment(), 1, "First increment should return 1");
+     assert_eq!(client.increment(), 2, "Second increment should return 2");
+     assert_eq!(client.increment(), 3, "Third increment should return 3");
+     assert_eq!(client.increment(), 4, "Fourth increment should return 4");
 
     // Get state after 4 increments
     assert_eq!(client.get_state(), State { count: 4, last_incr: 4 });
 
-    // EVENTS
-    assert_eq!(
+     // EVENTS
+     assert_eq!(
         env.events().all(),
         vec![
             &env,
@@ -54,6 +55,7 @@ fn test_error_condition() {
     let contract_id = env.register_contract(None, IncrementContract);
     let client = IncrementContractClient::new(&env, &contract_id);
 
+
     // Increment to the limit
     for _ in 0..4 {
         client.increment();
@@ -75,9 +77,10 @@ fn test_error_and_state() {
     }
 
     // Try to increment again, which should fail
-    let result = client.try_increment();
+    let result = client.increment();
     assert!(result.is_err(), "Fifth increment should result in an error");
 
-    // Verify that the state hasn't changed after the error
-    assert_eq!(client.get_state(), State { count: 4, last_incr: 4 });
+     // Verify that the state hasn't changed after the error
+     assert_eq!(client.get_state(), State { count: 4, last_incr: 4 });
+
 }

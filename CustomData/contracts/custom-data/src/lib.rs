@@ -15,10 +15,10 @@ const STATE: Symbol = symbol_short!("STATE");
 // Let's get soroban: Custom Data types
 
 #[contract]
-pub struct CustomDataContract;
+pub struct IncrementContract;
 
 #[contractimpl]
-impl CustomDataContract {
+impl IncrementContract {
 
     pub fn get_state(env: Env) -> State {
         env.storage().instance().get(&STATE).unwrap_or(State { count: 0, last_incr: 0 })
@@ -36,8 +36,6 @@ impl CustomDataContract {
 
         
         env.storage().instance().set(&STATE, &state);
-
- 
         env.events().publish((STATE, symbol_short!("increment")), state);
         
         state.count

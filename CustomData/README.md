@@ -34,7 +34,7 @@ pub struct State {
 
 #[contracttype]
 #[derive(Copy, Clone, Debug, Eq, PartialEq)]
-#[repr(u32)]
+#[repr(u128)]
 pub enum State {
     A = 1,
     B = 2,
@@ -47,7 +47,7 @@ pub enum State {
 
 #[contracttype]
 #[derive(Clone, Debug, Eq, PartialEq)]
-pub enum State {
+pub enum Data {
     A,
-    B(..),
+    B(State),
 }
