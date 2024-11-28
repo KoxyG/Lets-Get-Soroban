@@ -1,6 +1,6 @@
 #![cfg(test)]
 use super::*;
-use soroban_sdk::{testutils::{Events, Address as _}, Address, vec, Env, IntoVal};
+use soroban_sdk::{testutils::{Events,  Address as _}, Address, vec, Env, IntoVal};
 
 
 #[test]
@@ -9,10 +9,11 @@ fn test_normal_operation() {
     let contract_id = env.register_contract(None, IncrementContract);
     let client = IncrementContractClient::new(&env, &contract_id);
 
-
     let user_1 = Address::generate(&env);
     env.mock_all_auths();
-     // INCREMENT
+   
+    // INCREMENT
+
      assert_eq!(client.increment(&user_1), 1, "First increment should return 1");
      assert_eq!(client.increment(&user_1), 2, "Second increment should return 2");
      assert_eq!(client.increment(&user_1), 3, "Third increment should return 3");
