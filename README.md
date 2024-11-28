@@ -3,6 +3,7 @@
 Welcome to the Let’s Get Soroban repository! This repository is designed to complement the YouTube playlist where I teach developers how to build on Soroban, the smart contracts platform for Stellar.
 
 Each folder in this repository corresponds to a specific episode in the playlist. Inside, you'll find source code, examples, and additional resources to help you dive deeper into the concepts covered in the videos.
+
 ---
 
 ## Repository Structure 📂
