@@ -1,4 +1,4 @@
-# Lets-Get-Soroban 🎥📚 by `KOXY`
+# Lets-Get-Soroban 🎥📚 by [KOXY](https://youtube.com/playlist?list=PLLU8sStM-_TsmN_Cb_eA4D3bLrj1LJ_v_&si=Pk7N6REWf0zWSoUP)
 
 Welcome to the Let’s Get Soroban repository! This repository is designed to complement the YouTube playlist where I teach developers how to build on Soroban, the smart contracts platform for Stellar.
 
