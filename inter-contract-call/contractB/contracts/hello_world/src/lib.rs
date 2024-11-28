@@ -4,7 +4,7 @@ use soroban_workspace_contract_a_interface::ContractAClient;
 
 mod contract_a {
     soroban_sdk::contractimport!(
-        file = "../contractA/target/wasm32-unknown-unknown/release/contract1.wasm"
+        file = "../contractA/target/wasm32-unknown-unknown/release/soroban_contract_a.wasm"
     );
 }
 
