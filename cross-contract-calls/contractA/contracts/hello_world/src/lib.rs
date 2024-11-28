@@ -5,8 +5,7 @@ use soroban_sdk::{contract, contractimpl};
 #[contract]
 pub struct ContractA;
 
-
-// use a upper camel case name
+// use a snake case name
 #[contractimpl]
 impl ContractA {
     pub fn add(x: u32, y: u32) -> u32 {
