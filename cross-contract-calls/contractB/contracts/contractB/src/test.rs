@@ -1,14 +1,14 @@
 #![cfg(test)]
 
-use super::*;
-use soroban_sdk::{vec, Env, String};
+use crate::{contract_a, ContractB, ContractBClient};
+use soroban_sdk::{Env};
 
 #[test]
 fn test() {
     let env = Env::default();
 
     // Register contract A using the imported Wasm.
-    let contract_a_id = env.register_contract_wasm(None, contract_a::Wasm);
+    let contract_a_id = env.register_contract_wasm(None, contract_a::WASM);
 
     // Register contract B defined in this crate.
     let contract_b_id = env.register_contract(None, ContractB);
