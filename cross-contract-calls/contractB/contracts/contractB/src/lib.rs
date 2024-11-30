@@ -3,9 +3,11 @@ use soroban_sdk::{contract, contractimpl, Address, Env};
 
 mod contract_a {
     soroban_sdk::contractimport!(
+        
         file = "../../../contractA/target/wasm32-unknown-unknown/release/soroban_contract_a.wasm"
     );
 }
+
 
 
 #[contract]
