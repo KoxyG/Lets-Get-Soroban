@@ -12,6 +12,7 @@ const ADMIN: Symbol = symbol_short!("admin");
 #[contractimpl]
 impl Factory {
     /// Construct the deployer with a provided administrator.
+    /// Here we deploy a contract on behalf of any address and initialize it atomically.
     pub fn __constructor(env: Env, admin: Address) {
         env.storage().instance().set(&ADMIN, &admin);
     }
