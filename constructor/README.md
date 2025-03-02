@@ -1,12 +1,27 @@
 # Constructors
 
-- With the release and successful validator vote of Protocol 22, smart contracts are now capable of utilizing a __constructor function!
 
-- it's possible to perform that initialization at deploy-time. This prevents front-running, and keeps the contract you've deployed within your own control at all times.
 
-- Constructor functions look pretty much exactly the same as the previously used init functions. The only difference is when the function is executed.
 
-- 
+- Constructor are special functions that are only called or executed once, when you first deployed your smart contract.
+
+- Unlike regular functions that you can call multiple times, the constructor is only called once a contract is deployed.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 [ConstructorContract](https://github.com/ElliotFriend/ye-olde-guestbook/blob/main/contracts/ye_olde_guestbook/src/lib.rs)
