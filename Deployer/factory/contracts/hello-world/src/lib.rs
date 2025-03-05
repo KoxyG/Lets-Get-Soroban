@@ -17,14 +17,14 @@ impl Factory {
         env.storage().instance().set(&ADMIN, &admin);
     }
 
-    /// Deploys the contract on behalf of the `Deployer` contract.
+     /// Deploys the contract on behalf of the `Deployer` contract.
     ///
     /// This has to be authorized by the `Deployer`s administrator.    
     pub fn deploy(
         env: Env,
         wasm_hash: BytesN<32>,
         salt: BytesN<32>,
-        constructor_args: Vec<Val>,
+        constructor_arg: u32,
     ) -> Address {
         let admin: Address = env.storage().instance().get(&ADMIN).unwrap();
         admin.require_auth();
@@ -43,6 +43,7 @@ impl Factory {
 
         deployed_address
     }
+    
 }
 
 mod test;

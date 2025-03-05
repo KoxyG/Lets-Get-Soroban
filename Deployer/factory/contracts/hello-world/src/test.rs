@@ -50,7 +50,4 @@ fn test() {
     let client = contract::Client::new(&env, &contract_id);
     client.increment();
     assert_eq!(client.get(), 6);
-
-    // let sum = client.value();
-    // assert_eq!(sum, 5);
 }
